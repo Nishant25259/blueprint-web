@@ -17,27 +17,27 @@ import constructionHero from '@/assets/construction-hero.jpg';
 const Home = () => {
   const services = [
     {
-      title: "Residential Construction",
-      description: "Custom homes and residential projects built to perfection",
+      title: "River Sand Supply",
+      description: "Premium quality river sand for concrete and construction work",
       icon: Building,
     },
     {
-      title: "Commercial Building",
-      description: "Office buildings, retail spaces, and industrial facilities",
+      title: "Crusher Sand",
+      description: "Machine-made sand perfect for plastering and masonry work",
       icon: Building,
     },
     {
-      title: "Renovation & Remodeling",
-      description: "Transform existing spaces with modern upgrades",
+      title: "Fill Sand",
+      description: "High-grade fill sand for foundation and landscaping projects",
       icon: Building,
     },
   ];
 
   const stats = [
-    { number: "500+", label: "Projects Completed" },
+    { number: "1000+", label: "Tons Delivered Monthly" },
     { number: "20+", label: "Years Experience" },
-    { number: "50+", label: "Expert Team" },
-    { number: "100%", label: "Client Satisfaction" },
+    { number: "15+", label: "JCB Trucks Fleet" },
+    { number: "100%", label: "Quality Guaranteed" },
   ];
 
   const testimonials = [
@@ -71,24 +71,24 @@ const Home = () => {
         <div className="absolute inset-0 bg-gradient-overlay"></div>
         <div className="relative z-10 text-center max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <Badge className="mb-4 bg-primary/20 text-primary border-primary">
-            Professional Construction Services
+            Premium Sand Supply Services
           </Badge>
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 text-shadow fade-in-up">
-            Building Tomorrow's
-            <span className="gradient-text block">Infrastructure Today</span>
+            Quality Sand for Every
+            <span className="gradient-text block">Construction Project</span>
           </h1>
           <p className="text-xl text-white/90 mb-8 fade-in-up">
-            With over 20 years of experience, we deliver exceptional construction 
-            projects that stand the test of time.
+            With over 20 years of experience and modern JCB trucks & mining equipment, 
+            we supply premium quality sand to construction sites across the region.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center fade-in-up">
             <Button variant="hero" size="lg" className="text-lg">
-              Start Your Project
+              Order Sand Now
               <ArrowRight className="ml-2" />
             </Button>
             <Button variant="steel" size="lg" className="text-lg">
               <Phone className="mr-2" />
-              Get Free Quote
+              Get Delivery Quote
             </Button>
           </div>
         </div>
@@ -116,13 +116,13 @@ const Home = () => {
       <section className="py-20 bg-muted/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <Badge className="mb-4">Our Services</Badge>
+            <Badge className="mb-4">Our Sand Types</Badge>
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Comprehensive Construction Solutions
+              Premium Quality Sand for Every Need
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              From residential homes to commercial complexes, we provide end-to-end 
-              construction services with unmatched quality and expertise.
+              From fine sand for plastering to coarse sand for concrete mixing, 
+              we supply all types of construction sand with guaranteed quality and timely delivery.
             </p>
           </div>
           
@@ -152,22 +152,22 @@ const Home = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <Badge className="mb-4">Why Choose BuildCorp</Badge>
+              <Badge className="mb-4">Why Choose SandCorp</Badge>
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                Excellence in Every Project
+                Reliable Sand Supply Partnership
               </h2>
               <p className="text-lg text-muted-foreground mb-8">
-                We combine traditional craftsmanship with modern technology to deliver 
-                construction projects that exceed expectations.
+                We combine modern mining equipment with efficient logistics to deliver 
+                premium quality sand exactly when and where you need it.
               </p>
               
               <div className="space-y-4">
                 {[
-                  "Licensed and Insured Professionals",
-                  "On-Time Project Delivery",
-                  "Quality Materials and Workmanship",
-                  "24/7 Customer Support",
-                  "Competitive Pricing",
+                  "Licensed Mining & Supply Operations",
+                  "Same-Day Delivery Available",
+                  "Quality Tested Sand Products",
+                  "24/7 Order & Support Hotline",
+                  "Competitive Bulk Pricing",
                 ].map((item, index) => (
                   <div key={index} className="flex items-center space-x-3">
                     <CheckCircle className="h-5 w-5 text-primary flex-shrink-0" />
@@ -177,16 +177,16 @@ const Home = () => {
               </div>
               
               <Button variant="construction" size="lg" className="mt-8">
-                Learn More About Us
+                View Our Equipment
               </Button>
             </div>
             
             <div className="construction-grid p-8 rounded-lg">
               <div className="bg-card p-6 rounded-lg shadow-steel">
                 <Award className="h-12 w-12 text-primary mb-4" />
-                <h3 className="text-xl font-bold mb-2">Award Winning</h3>
+                <h3 className="text-xl font-bold mb-2">Modern Fleet</h3>
                 <p className="text-muted-foreground">
-                  Recognized for excellence in construction and customer service.
+                  15+ JCB trucks and advanced mining equipment for efficient operations.
                 </p>
               </div>
             </div>
@@ -233,11 +233,11 @@ const Home = () => {
       <section className="py-20 bg-secondary text-secondary-foreground">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Ready to Start Your Construction Project?
+            Need Quality Sand for Your Project?
           </h2>
           <p className="text-xl mb-8 opacity-90">
-            Get a free consultation and quote for your next construction project. 
-            Our team is ready to bring your vision to life.
+            Get instant delivery quotes and place your sand order today. 
+            Our JCB trucks are ready to deliver premium sand to your construction site.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button variant="hero" size="lg" className="text-lg">

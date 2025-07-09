@@ -21,7 +21,7 @@ const Navigation = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
             <HardHat className="h-8 w-8 text-primary" />
-            <span className="text-xl font-bold text-foreground">BuildCorp</span>
+            <span className="text-xl font-bold text-foreground">SandCorp</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -37,7 +37,7 @@ const Navigation = () => {
             ))}
             <Button variant="construction" className="flex items-center gap-2">
               <Phone className="h-4 w-4" />
-              Get Quote
+              Order Sand
             </Button>
           </div>
 
@@ -70,7 +70,7 @@ const Navigation = () => {
               ))}
               <Button variant="construction" className="flex items-center gap-2 w-fit">
                 <Phone className="h-4 w-4" />
-                Get Quote
+                Order Sand
               </Button>
             </div>
           </div>
