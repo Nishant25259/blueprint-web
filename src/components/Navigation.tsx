@@ -1,10 +1,14 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { Menu, X, HardHat, Phone } from 'lucide-react';
+import { Menu, X, HardHat, Phone, LogIn } from 'lucide-react';
+import { useAuth } from '@/contexts/AuthContext';
+import AuthModal from './AuthModal';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [authModalOpen, setAuthModalOpen] = useState(false);
+  const { user, isAdmin, signOut } = useAuth();
 
   const navItems = [
     { name: 'Home', path: '/' },
@@ -35,10 +39,37 @@ const Navigation = () => {
                 {item.name}
               </Link>
             ))}
-            <Button variant="construction" className="flex items-center gap-2">
-              <Phone className="h-4 w-4" />
-              Order Sand
-            </Button>
+            {user ? (
+              <div className="flex items-center gap-4">
+                {isAdmin && (
+                  <Button variant="ghost" asChild>
+                    <Link to="/admin">Admin Panel</Link>
+                  </Button>
+                )}
+                <Button variant="construction" className="flex items-center gap-2">
+                  <Phone className="h-4 w-4" />
+                  Order Sand
+                </Button>
+                <Button variant="outline" onClick={() => signOut()}>
+                  Logout
+                </Button>
+              </div>
+            ) : (
+              <div className="flex items-center gap-4">
+                <Button variant="construction" className="flex items-center gap-2">
+                  <Phone className="h-4 w-4" />
+                  Order Sand
+                </Button>
+                <Button 
+                  variant="outline" 
+                  onClick={() => setAuthModalOpen(true)}
+                  className="flex items-center gap-2"
+                >
+                  <LogIn className="h-4 w-4" />
+                  Login
+                </Button>
+              </div>
+            )}
           </div>
 
           {/* Mobile menu button */}
@@ -68,14 +99,46 @@ const Navigation = () => {
                   {item.name}
                 </Link>
               ))}
-              <Button variant="construction" className="flex items-center gap-2 w-fit">
-                <Phone className="h-4 w-4" />
-                Order Sand
-              </Button>
+              {user ? (
+                <div className="flex flex-col gap-2">
+                  {isAdmin && (
+                    <Button variant="ghost" asChild className="w-fit">
+                      <Link to="/admin">Admin Panel</Link>
+                    </Button>
+                  )}
+                  <Button variant="construction" className="flex items-center gap-2 w-fit">
+                    <Phone className="h-4 w-4" />
+                    Order Sand
+                  </Button>
+                  <Button variant="outline" onClick={() => signOut()} className="w-fit">
+                    Logout
+                  </Button>
+                </div>
+              ) : (
+                <div className="flex flex-col gap-2">
+                  <Button variant="construction" className="flex items-center gap-2 w-fit">
+                    <Phone className="h-4 w-4" />
+                    Order Sand
+                  </Button>
+                  <Button 
+                    variant="outline" 
+                    onClick={() => setAuthModalOpen(true)}
+                    className="flex items-center gap-2 w-fit"
+                  >
+                    <LogIn className="h-4 w-4" />
+                    Login
+                  </Button>
+                </div>
+              )}
             </div>
           </div>
         )}
       </div>
+      
+      <AuthModal 
+        isOpen={authModalOpen} 
+        onClose={() => setAuthModalOpen(false)} 
+      />
     </nav>
   );
 };
