@@ -2,11 +2,12 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Services from "./pages/Services";
 import Projects from "./pages/Projects";
+import ProjectDetails from "./pages/ProjectDetails";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import AdminDashboard from "./pages/AdminDashboard";
@@ -32,7 +33,7 @@ function AppContent() {
   }
 
   return (
-    <BrowserRouter>
+    <Router>
       <div className="min-h-screen flex flex-col">
         <Routes>
           {/* Admin Routes */}
@@ -59,6 +60,7 @@ function AppContent() {
                   <Route path="/about" element={<About />} />
                   <Route path="/services" element={<Services />} />
                   <Route path="/projects" element={<Projects />} />
+                  <Route path="/projects/:id" element={<ProjectDetails />} />
                   <Route path="/contact" element={<Contact />} />
                   <Route path="*" element={<NotFound />} />
                 </Routes>
@@ -68,7 +70,7 @@ function AppContent() {
           } />
         </Routes>
       </div>
-    </BrowserRouter>
+    </Router>
   );
 }
 
