@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -6,6 +7,7 @@ import { Building, Home, Factory, Calendar, DollarSign, Users } from 'lucide-rea
 
 const Projects = () => {
   const [filter, setFilter] = useState('all');
+  const navigate = useNavigate();
 
   const projects = [
     {
@@ -83,10 +85,10 @@ const Projects = () => {
   ];
 
   const categories = [
-    { id: 'all', label: 'All Projects', icon: Building },
-    { id: 'residential', label: 'Residential', icon: Home },
-    { id: 'commercial', label: 'Commercial', icon: Building },
-    { id: 'industrial', label: 'Industrial', icon: Factory }
+    { id: 'all', label: 'Projects', icon: Building },
+    // { id: 'residential', label: 'Residential', icon: Home },
+    // { id: 'commercial', label: 'Commercial', icon: Building },
+    // { id: 'industrial', label: 'Industrial', icon: Factory }
   ];
 
   const filteredProjects = filter === 'all' 
@@ -150,7 +152,7 @@ const Projects = () => {
                   key={category.id}
                   variant={filter === category.id ? "construction" : "outline"}
                   onClick={() => setFilter(category.id)}
-                  className="flex items-center gap-2"
+                  className="flex items-center gap-2 sidebar-button transition-colors duration-300 hover:bg-primary hover:text-primary-foreground"
                 >
                   <Icon className="h-4 w-4" />
                   {category.label}
@@ -166,10 +168,15 @@ const Projects = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredProjects.map((project) => (
-              <Card key={project.id} className="overflow-hidden hover:shadow-steel transition-all duration-300 group">
+              <Card key={project.id} className="overflow-hidden transition-all duration-300 group hover:shadow-steel hover:scale-105 hover:-translate-y-2">
                 <div className="aspect-video bg-muted relative overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-overlay opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                    <Button variant="hero">View Details</Button>
+                    <Button
+                      variant="hero"
+                      onClick={() => navigate(`/projects/${project.id}`)}
+                    >
+                      View Details
+                    </Button>
                   </div>
                   <div className="w-full h-full bg-construction-grid flex items-center justify-center">
                     <Building className="h-16 w-16 text-muted-foreground/50" />
@@ -275,7 +282,7 @@ const Projects = () => {
             <Button variant="hero" size="lg" className="text-lg">
               Start Your Project
             </Button>
-            <Button variant="outline" size="lg" className="text-lg border-secondary-foreground text-secondary-foreground hover:bg-secondary-foreground hover:text-secondary">
+            <Button variant="outline" size="lg" className="text-lg border-secondary-foreground text-primary-foreground hover:bg-secondary-foreground hover:text-secondary">
               Schedule Consultation
             </Button>
           </div>

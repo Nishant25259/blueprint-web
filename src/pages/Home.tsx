@@ -12,7 +12,7 @@ import {
   Phone,
   Mail
 } from 'lucide-react';
-import constructionHero from '@/assets/construction-hero.jpg';
+import constructionHero from '@/assets/sandmine.png';
 
 const Home = () => {
   const services = [
@@ -70,7 +70,7 @@ const Home = () => {
       >
         <div className="absolute inset-0 bg-gradient-overlay"></div>
         <div className="relative z-10 text-center max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Badge className="mb-4 bg-primary/20 text-primary border-primary">
+          <Badge className="mb-4 bg-primary border-primary">
             Premium Sand Supply Services
           </Badge>
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 text-shadow fade-in-up">
@@ -137,7 +137,7 @@ const Home = () => {
                   <CardDescription>{service.description}</CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <Button variant="ghost" className="group-hover:text-primary">
+                  <Button variant="ghost"  className="relative px-6 py-3 bg-orange-400 text-white font-semibold rounded transition-transform duration-300 ease-in-out hover:translate-x-2">
                     Learn More <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                 </CardContent>
@@ -176,7 +176,7 @@ const Home = () => {
                 ))}
               </div>
               
-              <Button variant="construction" size="lg" className="mt-8">
+              <Button variant="construction" size="lg" className="mt-8 relative px-6 py-3 bg-orange-600 text-white font-semibold rounded transition-transform duration-300 ease-in-out hover:translate-x-2">
                 View Our Equipment
               </Button>
             </div>
@@ -206,7 +206,7 @@ const Home = () => {
           
           <div className="grid md:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
-              <Card key={index} className="hover:shadow-steel transition-all duration-300">
+              <Card key={index} className="hover:shadow-steel transition-all duration-300 hover:-translate-y-2   ">
                 <CardHeader>
                   <div className="flex items-center space-x-1 mb-4">
                     {[...Array(testimonial.rating)].map((_, i) => (
@@ -244,9 +244,9 @@ const Home = () => {
               <Phone className="mr-2" />
               Call (555) 123-4567
             </Button>
-            <Button variant="outline" size="lg" className="text-lg border-secondary-foreground text-secondary-foreground hover:bg-secondary-foreground hover:text-secondary">
+            <Button variant="outline" size="lg" className="text-lg border-secondary-foreground text-primary-foreground hover:bg-secondary-foreground hover:text-secondary">
               <Mail className="mr-2" />
-              Email Us
+              <a>Email Us</a>
             </Button>
           </div>
         </div>

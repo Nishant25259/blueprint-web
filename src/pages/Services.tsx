@@ -146,7 +146,7 @@ const Services = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
-              <Card key={index} className="hover:shadow-steel transition-all duration-300 group">
+              <Card key={index} className="group transition-all duration-300 hover:shadow-steel hover:scale-200 hover:-translate-y-2">
                 <CardHeader>
                   <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
                     <service.icon className="h-6 w-6 text-primary" />
@@ -167,7 +167,7 @@ const Services = () => {
                     <Badge variant="secondary" className="mb-4">
                       {service.price}
                     </Badge>
-                    <Button variant="ghost" className="w-full group-hover:text-primary">
+                    <Button variant="ghost" className="w-full bg-orange-400 text-white">
                       Learn More <ArrowRight className="ml-2 h-4 w-4" />
                     </Button>
                   </div>
@@ -253,7 +253,7 @@ const Services = () => {
                 </div>
               </div>
               
-              <Button variant="construction" size="lg" className="mt-8">
+              <Button variant="construction" size="lg" className="mt-8 relative px-6 py-3 bg-orange-400 text-white font-semibold rounded transition-transform duration-300 ease-in-out hover:translate-x-2">
                 Get Your Free Quote
               </Button>
             </div>
@@ -296,7 +296,7 @@ const Services = () => {
             <Button variant="hero" size="lg" className="text-lg">
               Request Free Consultation
             </Button>
-            <Button variant="outline" size="lg" className="text-lg border-secondary-foreground text-secondary-foreground hover:bg-secondary-foreground hover:text-secondary">
+            <Button variant="outline" size="lg" className="text-lg border-secondary-foreground text-primary-foreground hover:bg-secondary-foreground hover:text-secondary">
               View Our Portfolio
             </Button>
           </div>

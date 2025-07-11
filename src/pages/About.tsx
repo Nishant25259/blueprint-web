@@ -89,7 +89,7 @@ const About = () => {
                 Every project we undertake is a testament to our dedication to excellence 
                 and our passion for creating spaces where people live, work, and thrive.
               </p>
-              <Button variant="construction" size="lg">
+              <Button variant="construction" size="lg" className="relative px-6 py-3 bg-orange-600 text-white font-semibold rounded transition-transform duration-300 ease-in-out hover:translate-x-2">
                 See Our Projects <ArrowRight className="ml-2" />
               </Button>
             </div>
@@ -123,7 +123,7 @@ const About = () => {
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {values.map((value, index) => (
-              <Card key={index} className="text-center hover:shadow-steel transition-all duration-300 group">
+              <Card key={index} className="text-center group transition-all duration-300 hover:shadow-steel hover:scale-105 hover:-translate-y-2 ">
                 <CardHeader>
                   <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 transition-colors">
                     <value.icon className="h-8 w-8 text-primary" />
@@ -153,7 +153,7 @@ const About = () => {
           
           <div className="grid md:grid-cols-3 gap-8">
             {team.map((member, index) => (
-              <Card key={index} className="hover:shadow-steel transition-all duration-300">
+              <Card key={index} className="group transition-all duration-300 hover:shadow-steel hover:scale-105 hover:-translate-y-2">
                 <CardHeader>
                   <div className="w-20 h-20 bg-muted rounded-full mx-auto mb-4"></div>
                   <CardTitle className="text-center">{member.name}</CardTitle>
@@ -176,7 +176,7 @@ const About = () => {
       {/* Mission Section */}
       <section className="py-20 bg-secondary text-secondary-foreground">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <Badge className="mb-4 bg-primary/20 text-primary border-primary">Our Mission</Badge>
+          <Badge className="mb-4 bg-primary  border-primary">Our Mission</Badge>
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Building Communities, Creating Futures
           </h2>
