@@ -5,6 +5,7 @@ import { Menu, X, HardHat, Phone, LogIn } from 'lucide-react';
 import { useAuth } from '@/contexts/AuthContext';
 import AuthModal from './AuthModal';
 
+  import logo from '@/assets/logo.jpg';
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [authModalOpen, setAuthModalOpen] = useState(false);
@@ -20,12 +21,17 @@ const Navigation = () => {
 
   return (
     <nav className="bg-card/95 backdrop-blur-sm border-b border-border sticky top-0 z-50 shadow-steel">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
-            <HardHat className="h-8 w-8 text-primary" />
-            <span className="text-xl font-bold text-foreground">SandCorp</span>
+             <span
+                className="w-10 h-10 bg-cover bg-center rounded-full"
+              style={{ backgroundImage: `url(${logo})` }}
+                ></span>
+            <span className="text-xl font-bold text-foreground">SHIKU</span>
+  
+            <span className="text-xl font-bold text-primary">INFRA PRIVATE LIMITED</span>
           </Link>
 
           {/* Desktop Navigation */}
